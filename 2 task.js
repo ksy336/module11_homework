@@ -5,14 +5,14 @@ function simpleNum(num) {
     switch(num){
         case 0 :
             console.log('It is 0.Try again.');
-            break;
+            return;
         case 1 :
             console.log('It is 1. Try again.');
-            break;
+            return;
         default:
             if (num > 1000){
                 console.log('The number is too big. Try again.');
-                break;
+                return;
             } else {
                 for (let i = 2; i < num; i++) {
                     if(num % i == 0) {
@@ -22,13 +22,18 @@ function simpleNum(num) {
                 }
             }
     }
-    if((flag == true) && (num !=0) && (num != 1)) {
+    if (flag) {
         console.log('Entered number is a simple number.');
-    } else if (flag == false){
+    } else {
         console.log('Entered number is not a simple number.');
     }
 
 }
 
 
-simpleNum();
+simpleNum(25);
+
+// В целом всё сделано верно, но есть несколько замечаний:
+// 1. В случае с 0, 1 и числами больше 1000 можно сразу выходить из функции после вывода сообщения, т.к. уже нет смысла перебирать делители и совершать дальнейшие действия
+// 2. После выполнения пункта 1 можно упростить условие при выводе результата в консоль в конце функции
+// Исправила всё вышеперечисленное в коде
