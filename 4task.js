@@ -5,7 +5,7 @@ function timer (n, lastNum){
             console.log(n);
             n++
 
-        } else if (n > lastNum){
+        } else { // здесь условие можно упростить
             clearInterval(intervalId);
         }
 
